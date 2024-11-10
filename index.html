@@ -29,7 +29,7 @@
             }
             console.log('Guesses: ' + guesses);
             let playAgain = prompt(guesses > 1 ? 'You guessed it in ' + guesses + ' guesses! Play again (y/n)?' : 'You guessed it in ' + guesses + ' guess, Amazing! Play again (y/n)?');
-            if(playAgain == 'n'){
+            if(playAgain.toLowerCase == 'n'){
                 console.log('You played ' + roundNumber + ' rounds!')
                 alert(roundNumber > 1 ? `You played ${roundNumber} rounds. Thanks for playing!` : `You played ${roundNumber} round. Thanks for playing!`)
                 keepPlaying = false;
