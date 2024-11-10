@@ -14,10 +14,16 @@
             let correct = false;
             let guesses = 0;
             console.log('Random number: ' + randomNumber);
+            let guess = prompt('Round ' + roundNumber + ': ' + 'Guess a number between 1 and 10');
             while(correct == false){
-                let guess = prompt('Round ' + roundNumber + ': ' + 'Guess a number between 1 and 10');
                 if(guess == randomNumber){
                     correct = true
+                } else{
+                    if(guess < randomNumber){
+                        guess = prompt(`Guess was too low, guess again.`)
+                    } else{
+                        guess = prompt(`Guess was too high, guess again.`)
+                    }
                 }
                 guesses ++;        
             }
