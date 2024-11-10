@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let keepPlaying = true;
+        let roundNumber = 1;
+        console.log('Round: ' + roundNumber);
+        while(keepPlaying == true){
+            let randomNumber = Math.floor(Math.random() * 10) + 1;
+            let correct = false;
+            let guesses = 0;
+            console.log('Random number: ' + randomNumber);
+            while(correct == false){
+                let guess = prompt('Round ' + roundNumber + ': ' + 'Guess a number between 1 and 10');
+                if(guess == randomNumber){
+                    correct = true
+                }
+                guesses ++;        
+            }
+            console.log('Guesses: ' + guesses);
+            let playAgain = prompt(guesses > 1 ? 'You guessed it in ' + guesses + ' guesses! Play again (y/n)?' : 'You guessed it in ' + guesses + ' guess, Amazing! Play again (y/n)?');
+            if(playAgain == 'n'){
+                console.log('You played ' + roundNumber + ' rounds!')
+                alert(roundNumber > 1 ? `You played ${roundNumber} rounds. Thanks for playing!` : `You played ${roundNumber} round. Thanks for playing!`)
+                keepPlaying = false;
+            } else{
+                roundNumber ++;
+                console.log('Round: ' + roundNumber);
+                keepPlaying = true;
+            }
+        }
+    </script>
+</body>
+</html>
